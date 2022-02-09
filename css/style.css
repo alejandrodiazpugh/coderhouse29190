@@ -12,7 +12,7 @@
     --clr-secondary: #8B74DA;
     --clr-accent: #FFFDE7;
     --clr-dark: #000;
-    --distance-top: 3em;
+    --distance-top: 10rem;
 }
 
 /* tipografía */
@@ -247,6 +247,8 @@ fieldset {
 /* media */
 
 @media only screen and (min-width: 700px) {
+
+    /* General */
     
     header {
         flex-direction: row;
@@ -262,6 +264,23 @@ fieldset {
     li {
         padding-inline: .5rem;
     }
+
+    footer {
+        flex-direction: row;
+
+    }
+
+    .social {
+        flex: 0 1 100%;
+        align-items: center;
+        justify-self: flex-start;
+    }
+
+    .firma {
+        flex: 0 1 100%;
+    }
+
+    /* index */
 
     .hero {
         width: 100vw;
@@ -298,45 +317,52 @@ fieldset {
         padding: 1rem;
     }
 
-footer {
-    flex-direction: row;
+    /* About Me */
+
+    .aboutMe__container {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+    }
+
+    .aboutMe__hero {
+        grid-column-start: 1;
+        align-self: center;
+    }
+
+    .aboutMe__hero > * {
+        width: 50%;
+    }
+
+    .aboutMe__text {
+        grid-column: 2 / span 2;
+        align-self: center;
+    }
+  
+    /*  Contacto */
+
+    .contactForm {
+        grid-template-columns: 20% 20% 30% 30%;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .contactForm__title {
+        grid-column: 1 / span 2;
+        align-self: center;
+    }
+
+    .contactForm__text {
+        grid-row-start: 2;
+        grid-column: 1 / span 2;
+        align-self:baseline'
+    }
+
+    form {
+        grid-column: 3 / span 2;
+        grid-row: 1 / span 2;
+        align-self: flex-end;
+    }
 
 }
-
-.social {
-    flex: 0 1 100%;
-    align-items: center;
-    justify-self: flex-start;
-}
-
-.firma {
-    flex: 0 1 100%;
-}
-
-.contactForm {
-    grid-template-columns: 20% 20% 30% 30%;
-    grid-template-rows: 1fr 1fr;
-}
-
-.contactForm__title {
-    grid-column: 1 / span 2;
-    align-self: center;
-}
-
-.contactForm__text {
-    grid-row-start: 2;
-    grid-column: 1 / span 2;
-    align-self:baseline
-}
-
-form {
-    grid-column: 3 / span 2;
-    grid-row: 1 / span 2;
-    align-self: flex-end;
-}
-
-}
-
 /* TODO:
 - homologar botones (productos y contacto)
 - eliminar wiggle en scroll horizontal (overflow-x: hidden no funciiona)
