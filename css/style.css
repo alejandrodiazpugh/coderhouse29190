@@ -1,7 +1,9 @@
-/* limpieza general */
+/* --limpieza general-- */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;600&display=swap');
 
-* {
+*,
+*::after,
+*::before {
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -12,10 +14,11 @@
     --clr-secondary: #8B74DA;
     --clr-accent: #FFFDE7;
     --clr-dark: #000;
-    --distance-top: 10rem;
+    --distance-top: 7.5rem;
+    --distance-top-desktop: 5rem;
 }
 
-/* tipografía */
+/* --tipografía-- */
 
 
 body {
@@ -31,6 +34,7 @@ body {
 h2 {
     font-size: 2.5rem;
     color: var(--clr-dark);
+    margin-top: 3rm;
 }
 
 h3 {
@@ -38,6 +42,11 @@ h3 {
     margin: 0.5em 0.5em 0.2em;
     color: var(--clr-accent);
     font-weight: 600;
+}
+
+h4 {
+    padding-inline: 1rem;
+    margin-top: 1rem;
 }
 
 .blogEntrada {
@@ -60,14 +69,13 @@ li,
     font-size: 1em;
 }
 
-
-
-/* navegacion */
+/* --navegacion-- */
 
 header {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
+    text-align: center;
     background-color: #FFF;
     position: fixed;
     z-index: 9999;
@@ -109,14 +117,13 @@ a:hover {
 }
 
 
-/* imgs */
+/* --imgs-- */
 
 .logo {
     width: 25vw;
 }
 
-.hero,
-.momTales__img {
+.hero {
     width: 100vw;
     height: 40vh;
     object-fit: cover;
@@ -146,12 +153,27 @@ a:hover {
     margin: auto;
 }
 
+.momTales__img {
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+}
 
-/* containers */
+
+/* --containers-- */
+
 .mainSection__heroContainer {
     position: relative;
     overflow: hidden;
 }
+
+.mainSection__text {
+    position: relative;
+}
+
+.mainSection__text > p {
+    margin-inline: 0;
+} 
 
 .ctaLinks__container {
     background-color: var(--clr-secondary);
@@ -161,8 +183,12 @@ a:hover {
 
 .ctaLinks__title,
 .recent__title {
-    margin: 1rem;
+    margin: 3rem 1rem;
     padding: 1rem;
+}
+
+.ctaLinks__text {
+    margin-inline: 1.3rem;
 }
 
 .recent {
@@ -170,8 +196,28 @@ a:hover {
     flex-direction: column;
 }
 
+.aboutMe__title {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+.aboutMe__text {
+    padding-inline: .5rem;
+}
+
+.blogEntries {
+    margin-bottom: 8rem;
+}
+
+.productosTitle {
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+}
+
+
 fieldset {
     border: 0;
+    padding: 1rem;
 }
 
 /* footer */
@@ -213,11 +259,11 @@ footer {
 /* form */
 
 .contactForm {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
 }
 
-fieldset {
+.gridForm {
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -236,6 +282,7 @@ fieldset {
     border: 0;
     border-radius: 0.3em;
     color: #333;
+    transition: ease-in-out 200ms;
 }
 
 .btn:hover {
@@ -254,6 +301,9 @@ fieldset {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        
     }
 
     .logo {
@@ -263,6 +313,10 @@ fieldset {
 
     li {
         padding-inline: .5rem;
+    }
+
+    main {
+        top: var(--distance-top-desktop);
     }
 
     footer {
@@ -285,6 +339,10 @@ fieldset {
     .hero {
         width: 100vw;
         height: 50vw;
+    }
+
+    .mainSection__text {
+        margin: 4.5rem auto;
     }
     
     .ctaLinks__container {
@@ -319,6 +377,11 @@ fieldset {
 
     /* About Me */
 
+    .aboutMe__title {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
     .aboutMe__container {
        display: grid;
        grid-template-columns: repeat(3, 1fr);
@@ -338,11 +401,88 @@ fieldset {
         align-self: center;
     }
   
+    /* Blog */
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .blogTitle {
+        padding-top: 5rem;
+    }
+
+    .blog__img {
+        grid-row: 1 / span 3;
+        align-self: center;
+        justify-self: center;
+        width: 40vw;
+    }
+
+    .blogEntrada {
+        margin: 1rem;
+    }
+
+    .blogPreview {
+        margin: 3rem;
+        text-align: justify;
+    }
+
+    .blogAutora,
+    .blogFecha {
+        margin: 0;
+    }
+
+    .reverse > img {
+        grid-column-start: 2;
+    }
+
+    /* Producto */
+
+    .productGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product__img {
+        max-height: 30%;
+    }
+
+    .producto {
+        align-self: center;
+    }
+
+    .btn-products {
+        background-color: var(--clr-accent);
+        margin: 3rem auto;
+        padding: auto;        
+        border-radius: .250rem;
+        width: 50%;
+        transition: ease-in-out 300ms;
+    }
+
+    .btn-products:hover {
+        background-color: #333;
+    }
+
+    .btn-anchor {
+        color: #333;
+        font-size: .8em;
+        padding: 1rem;
+    }
+
+    .btn-anchor:hover {
+        color: var(--clr-accent);
+    }
+
+
     /*  Contacto */
 
     .contactForm {
-        grid-template-columns: 20% 20% 30% 30%;
-        grid-template-rows: 1fr 1fr;
+        flex-direction: row;
+    }
+    .contactForm__wrapper {
+        margin: auto;
     }
 
     .contactForm__title {
@@ -353,13 +493,26 @@ fieldset {
     .contactForm__text {
         grid-row-start: 2;
         grid-column: 1 / span 2;
-        align-self:baseline'
+        align-self: baseline;
     }
 
-    form {
-        grid-column: 3 / span 2;
-        grid-row: 1 / span 2;
-        align-self: flex-end;
+
+    .gridForm {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, auto);
+        gap: 0.8rem;
+        padding: auto;
+    }
+    .inputText {
+        padding: 0.4rem;
+    }
+    .inputMsj {
+        grid-column: 1 / span 2;
+        grid-row-start: 2;
+    }
+    .contactSubmit {
+        grid-row-start: 3;
+        grid-column: span 2;
     }
 
 }
