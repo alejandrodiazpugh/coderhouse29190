@@ -111,7 +111,8 @@ main {
 }
 
 .img-social {
-    width: 2vw;
+    min-width: 20px;
+    max-width: 2vw;
 }
 
 .cover {
