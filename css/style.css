@@ -85,6 +85,7 @@ header {
     width: 100%;
     position: fixed;
     z-index: 9999;
+    top: 0;
 }
 
 main {
@@ -113,13 +114,29 @@ main {
     width: 2vw;
 }
 
-/* --containers-- */
+.cover {
+    object-fit: cover;
+}
+
+.img-size {
+    width: 75%;
+    height: auto;
+    padding-top: 5rem;
+}
+/* ----------containers---------- */
 
 .clr-darkpurple {
     background-color: var(--clr-secondary);
 }
 
 
+/* ----------media----------*/
+@media only screen and (min-width: 990px) {
+    .img-size {
+        width: 40vw;
+        margin-left: 1vw;
+    }
+}
 
 
 
