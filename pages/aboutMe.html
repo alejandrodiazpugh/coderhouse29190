@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="../css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +11,29 @@
 </head>
 <body>
     <header>
-        <a href="../index.html"><img class="logo" src="../images/LogoYGTM.jpeg" alt="Logo You Got This Mom"></a>
-        <nav class="navBar">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="aboutMe.html">About Me</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html">
+                  <img src="/images/LogoYGTM.jpeg" alt="You Got This Mom" width="50" height="50" class="d-inline-block align-text-top"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link" href="/index.html">Inicio</a>
+                  <a class="nav-link active" aria-current="page" href="aboutMe.html">About Me</a>
+                  <a class="nav-link" href="blog.html">Blog</a>
+                  <a class="nav-link" href="productos.html">Productos</a>
+                  <a class="nav-link" href="contacto.html">Contacto</a>
+                </div>
+              </div>
+            </div>
+          </nav>
     </header>
     <main>
-        <section class="mainSection">
+       <div class="container-fluid">
+           
+       </div>
             <h2 class="aboutMe__title">About Me</h2>
         </section>
         <section class="mainSection">
@@ -39,16 +51,21 @@
             </div>
              </section>
     </main>
-   
     <footer>
-        <div class="social">
-            <a href="https://www.instagram.com/yougotthis_mom/" target="_blank"><img class="socialLogos" src="../images/instagramLogo.png" alt="instagramSVG"></a>
-            <span>@yougotthis_mom</span>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 p-0 mt-4">
+                    <a href="https://www.instagram.com/yougotthis_mom/" target="_blank"><img class="img-social" src="images/instagramLogo.png" alt="instagramSVG"> <span class="social-text">@yougotthis_mom</span></a>
+                </div>
+                <div class="col-md-4 offset-md-4 mt-4">
+                    <img src="images/firma.png" alt="Firma 'Con cariño, Lily'">
+                </div>
+                <div class="col-md-12 p-0 m-0">
+                    <p class="derechos mt-0 mb-3">© 2021 YOU GOT THIS MOM. Todos los Derechos Reservados</p>
+                </div>
+            </div>
         </div>
-        <div class="firma">
-            <img src="../images/firma.png" alt="Firma 'Con cariño, Lily'">
-        </div>
-        <p class="derechos">© 2021 YOU GOT THIS MOM. Todos los Derechos Reservados</p>
     </footer>
+    <script src="../js/bootstrap.js"></script>
 </body>
 </html>
