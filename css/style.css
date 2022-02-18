@@ -15,12 +15,14 @@
     --clr-secondary: #8B74DA;
     --clr-accent: #FFFDE7;
     --clr-dark: #000;
-    --distance-top: 0;
-    --distance-top-desktop: 0;
+    --distance-top: 8rem;
 }
 
 /* --tipografía-- */
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
    font-family: "Nunito Sans", sans-serif; 
@@ -36,6 +38,10 @@ h2 {
     font-size: 2.5rem;
     color: var(--clr-dark);
     margin-top: 3rm;
+}
+
+.secondary-clr {
+    background-color: var(--clr-secondary);
 }
 
 h3 {
@@ -79,7 +85,8 @@ a:hover {
     color: var(--clr-dark);
 }
 
-/* --navegacion-- */
+
+/*----------navegacion----------*/
 
 header {
     width: 100%;
@@ -91,10 +98,16 @@ header {
 main {
     background-color: var(--clr-main);
     position: relative;
-    top: var(--distance-top);
+    top: 8em;
 }
 
-/* --images --*/ 
+footer {
+    position: relative;
+    top: 8em;
+    background-color: var(--clr-secondary);
+}
+
+/* ----------images----------*/ 
 
 .img-carrousel {
     height: 70vh;
@@ -107,6 +120,15 @@ main {
 
 .hover:hover {
     filter: brightness(50%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.hover-alt {
+    transition: ease-in-out 300ms;
+}
+
+.hover-alt:hover {
     transform: scale(1.1);
 }
 
@@ -124,18 +146,83 @@ main {
     height: auto;
     padding-top: 5rem;
 }
+
+.bg-momTales {
+    background-image: url(../images/momTalesBlog.PNG);
+    background-position: center center;
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover;
+}
+.bg-contacto {
+    background-image: url(../images/contactoBanner.png);
+    background-position: center center;
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.max {
+    max-height: 18rem;
+}
+
 /* ----------containers---------- */
 
 .clr-darkpurple {
     background-color: var(--clr-secondary);
 }
 
+.centered {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+}
+
+.basis {
+    flex: 0 1 100%;
+}
 
 /* ----------media----------*/
 @media only screen and (min-width: 990px) {
     .img-size {
         width: 40vw;
         margin-left: 1vw;
+    }
+
+    /* -----blog----- */
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-center {
+        grid-column: 1 / span 2;
+    }
+
+    .blog__img {
+        grid-row: 2 / span 2;
+        align-self: center;
+        justify-self: center;
+        width: 40vw;
+    }
+    .reverse > img {
+        grid-column-start: 2;
+    }
+
+    /*-----productos-----*/
+
+    .grid-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
     }
 }
 
