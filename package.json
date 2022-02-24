@@ -1,0 +1,25 @@
+{
+  "name": "coderhouse29190",
+  "version": "1.0.0",
+  "description": "SASS comision 29190",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/main.scss css/compilado.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandrodiazpugh/coderhouse29190.git"
+  },
+  "author": "Alejandro Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejandrodiazpugh/coderhouse29190/issues"
+  },
+  "homepage": "https://github.com/alejandrodiazpugh/coderhouse29190#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15"
+  }
+}
