@@ -1,0 +1,9 @@
+$layers: (
+    "header": 3,
+    "main": 2,
+    "footer": 1
+);
+
+@mixin layer($layer-name) {
+    z-index: map-get($layers, $layer-name)
+}

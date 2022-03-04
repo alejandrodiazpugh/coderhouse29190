@@ -40,16 +40,18 @@ a {
 header {
   width: 100%;
   position: fixed;
-  z-index: 9999;
-  top: 0; }
+  top: 0;
+  z-index: 3; }
 
 main {
   position: relative;
-  top: 8rem; }
+  top: 8rem;
+  z-index: 2; }
 
 footer {
   position: relative;
   top: 8rem;
+  z-index: 1;
   background-color: #8B74DA; }
 
 /* ----------images----------*/
@@ -59,16 +61,18 @@ footer {
   filter: brightness(100%); }
 
 .hover {
-  transition: ease-in-out 300ms; }
+  transition: 300ms; }
   .hover:hover {
-    filter: brightness(50%);
     transform: scale(1.1);
+    filter: 50%;
     cursor: pointer; }
 
 .hover-alt {
-  transition: ease-in-out 300ms; }
+  transition: 300ms; }
   .hover-alt:hover {
-    transform: scale(1.1); }
+    transform: scale(1.1);
+    filter: 100%;
+    cursor: pointer; }
 
 .img-social {
   min-width: 20px;
@@ -114,7 +118,6 @@ footer {
 .basis {
   flex: 0 1 100%; }
 
-/* ---------- MEDIA ----------*/
 @media only screen and (min-width: 990px) {
   .img-size {
     width: 40vw;
@@ -139,3 +142,11 @@ footer {
   .grid-cards {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem; } }
+
+@media (prefers-reduced-motion) {
+  .hover, .hover-alt {
+    transition: 0ms; }
+    .hover:hover, .hover-alt:hover {
+      transform: scale(1);
+      filter: 0;
+      cursor: 0; } }
