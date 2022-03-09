@@ -19,6 +19,10 @@ body {
     background-color: $clr-main;
 }
 
+.clr-secondary {
+    background-color: $clr-secondary;
+}
+
 
 .recent__title {
     color: $clr-dark;
@@ -101,6 +105,25 @@ footer {
     object-fit: cover;
 }
 
+.bg-momTales {
+    background-image: url(../images/momTalesBlog.PNG);
+    @include sizes(100vw, 70vh);
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.bg-contacto {
+    background-image: url(../images/contactoBanner.png);
+    background-position: center center;
+    @include sizes(100vw, 70vh);
+    object-fit: cover;
+}
+
+.max {
+    @include sizes(100%, 18rem);
+}
+
 
 
 /* ----------containers---------- */
@@ -157,6 +180,8 @@ footer {
         align-self: center;
         justify-self: center;
         width: 40vw;
+        max-height: 60vh;
+        object-fit: cover;
     }
     .reverse > img {
         grid-column-start: 2;
