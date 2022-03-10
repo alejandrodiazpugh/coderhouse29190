@@ -46,6 +46,11 @@ header {
   top: 0;
   z-index: 3; }
 
+.nav-clr {
+  color: #BDA2FF; }
+  .nav-clr:hover {
+    color: #8B74DA; }
+
 main {
   position: relative;
   top: 8rem;
@@ -89,10 +94,16 @@ footer {
   height: auto;
   padding-top: 5rem; }
 
+.blog__img {
+  margin-top: 2vh;
+  width: 60vw;
+  height: 45vh;
+  object-fit: cover; }
+
 .bg-hero {
   background-image: url(../images/hero.jpg);
-  background-position: top center;
-  background-size: 100vw;
+  background-position: center;
+  background-size: 100%;
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
@@ -102,7 +113,8 @@ footer {
 .bg-momTales {
   background-image: url(../images/momTalesBlog.PNG);
   width: 100vw;
-  height: 70vh;
+  height: 50vh;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover; }

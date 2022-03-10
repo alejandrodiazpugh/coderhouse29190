@@ -53,6 +53,14 @@ header {
     @include layer(header);
 }
 
+.nav-clr {
+    color: $clr-main;
+    &:hover {
+        color: $clr-secondary;
+    }
+}
+
+
 main {
     @include positions(relative,$distance-top);
     @include layer(main);
@@ -95,10 +103,16 @@ footer {
     padding-top: 5rem;
 }
 
+.blog__img {
+    margin-top: 2vh;
+    @include sizes(60vw, 45vh);
+    object-fit: cover;
+}
+
 .bg-hero {
     background-image: url(../images/hero.jpg);
-    background-position: top center;
-    background-size: 100vw;
+    background-position: center;
+    background-size: 100%;
     @include sizes(100vw, 100vh);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -107,7 +121,8 @@ footer {
 
 .bg-momTales {
     background-image: url(../images/momTalesBlog.PNG);
-    @include sizes(100vw, 70vh);
+    @include sizes(100vw, 50vh);
+    background-size:contain;
     background-position: center;
     background-repeat: no-repeat;
     object-fit: cover;
